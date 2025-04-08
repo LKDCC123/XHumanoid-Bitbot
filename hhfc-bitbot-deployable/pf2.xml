@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bitbot>
+  <backend settings_file="setting.json"/>
+  <logger path="/home/huahui/Project/hhfc-bitbot/log/"/>
+  <logger level="debug"/>
+  <bus>
+    <device id="0" type="JointElmo" name="RShoulder"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.342"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    />
+    <device id="1" type="JointElmo" name="LShoulder"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.342"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    />
+    <device id="2" type="ImuMti300" name="mti300"/>
+    <device id="3" type="JointElmo" name="RHipPitch"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.13"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    /> 
+    <device id="4" type="JointElmo" name="RHipRoll"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.25"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-60" current_max="60" pos_min="-360" pos_max="360"
+    />
+    <device id="5" type="JointElmo" name="RHipYaw"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.25"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    />
+    <device id="6" type="JointElmo" name="RKnee"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.13"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-60" current_max="60" pos_min="-360" pos_max="360"
+    /> 
+    <device id="7" type="JointElmo" name="RAnkle0"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.2"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    /> 
+    <device id="8" type="JointElmo" name="RAnkle1"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.2"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    /> 
+    <device id="9" type="JointElmo" name="LHipPitch"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.13"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    /> 
+    <device id="10" type="JointElmo" name="LHipRoll"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.25"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-60" current_max="60" pos_min="-360" pos_max="360"
+    /> 
+    <device id="11" type="JointElmo" name="LHipYaw"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.25"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    />
+    <device id="12" type="JointElmo" name="LKnee"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.13"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-60" current_max="60" pos_min="-360" pos_max="360"
+    /> 
+    <device id="13" type="JointElmo" name="LAnkle0"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.2"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    /> 
+    <device id="14" type="JointElmo" name="LAnkle1"
+            enable="1" mode="CST" motor_direction="1" torque_direction="1" torque_constant="0.2"
+            encoder_resolution="131072" transmission_ratio="17.43" calibration_angle="0"
+            current_min="-35" current_max="35" pos_min="-360" pos_max="360"
+    />
+
+  </bus>
+
+</bitbot>

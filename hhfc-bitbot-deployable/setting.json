@@ -1,0 +1,88 @@
+{
+  "control": [
+    {
+      "event": "enable_record",
+      "kb_key": "m"
+    },
+    {
+      "event": "start",
+      "kb_key": "8"
+    },
+    {
+      "event": "power_on",
+      "kb_key": "9"
+    },
+    {
+      "event": "stop",
+      "kb_key": " "
+    },
+    {
+      "event": "switch_cst",
+      "kb_key": "5"
+    },
+    {
+      "event": "init_pose",
+      "kb_key": "p"
+    },
+    {
+      "event": "policy_run",
+      "kb_key": "r"
+    },
+    {
+      "event": "velo_x_increase",
+      "kb_key": "i"
+    },
+    {
+      "event": "velo_x_decrease",
+      "kb_key": "k"
+    },
+    {
+      "event": "velo_y_increase",
+      "kb_key": "j"
+    },
+    {
+      "event": "velo_y_decrease",
+      "kb_key": "l"
+    },
+    {
+      "event": "velo_yaw_increase",
+      "kb_key": "u"
+    },
+    {
+      "event": "velo_yaw_decrease",
+      "kb_key": "o"
+    },
+    {
+      "event": "ankle_test",
+      "kb_key": "a"
+    },
+    {
+      "event": "joint_sin_test",
+      "kb_key": "s"
+    },
+    {
+      "event": "hip_p_inc",
+      "kb_key": "z"
+    },
+    {
+      "event": "hip_p_dec",
+      "kb_key": "x"
+    },
+    {
+      "event": "knee_p_inc",
+      "kb_key": "c"
+    },
+    {
+      "event": "knee_p_dec",
+      "kb_key": "v"
+    },
+    {
+      "event": "ankle_p_inc",
+      "kb_key": "b"
+    },
+    {
+      "event": "ankle_p_dec",
+      "kb_key": "n"
+    }
+  ]
+}
