@@ -1,0 +1,32 @@
+{
+  "control": [
+    {
+      "event": "enable_record",
+      "kb_key": "m"
+    },
+    {
+      "event": "stop",
+      "kb_key": " "
+    },
+    {
+      "event": "start",
+      "kb_key": "8"
+    },
+    {
+      "event": "test",
+      "kb_key": "t"
+    },
+    {
+      "event": "waiting",
+      "kb_key": "5"
+    },
+    {
+      "event": "add",
+      "kb_key": "1"
+    },
+    {
+      "event": "minus",
+      "kb_key": "2"
+    }
+  ]
+}

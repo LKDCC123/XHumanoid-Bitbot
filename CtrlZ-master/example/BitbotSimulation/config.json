@@ -1,0 +1,163 @@
+{
+  "Scheduler": {
+    "dt": 0.001,
+    "InferTask": {
+      "PolicyFrequency": 10
+    }
+  },
+  "Workers": {
+    "ResetPosition": {
+      "Duration": 3
+    },
+    "Commander": {
+      "EchoCmd": true,
+      "UpperLimit": [
+        1.4,
+        0.3,
+        0.3
+      ],
+      "LowerLimit": [
+        -1.5,
+        -0.3,
+        -0.3
+      ],
+      "DiscreteCmdStep": [
+        0.2,
+        0.05,
+        0.05
+      ],
+      "ReverseJoystickAxis": [
+        false,
+        true,
+        true
+      ]
+    },
+    "MotorPDLoop": {
+      "Kp": [
+        60,
+        60,
+        100,
+        20,
+        60,
+        60,
+        100,
+        20
+      ],
+      "Kd": [
+        1.5,
+        1.5,
+        2.5,
+        0.5,
+        1.5,
+        1.5,
+        2.5,
+        0.5
+      ]
+    },
+    "MotorControl": {
+      "ControlMode": "Torque",
+      "TorqueLimit": [
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "PosFilterWeight": [
+        1
+      ],
+      "VelFilterWeight": [
+        1
+      ],
+      "DefaultPosition": [
+        0.0,
+        0.3,
+        -0.6,
+        -0.3,
+        0.0,
+        0.3,
+        -0.6,
+        -0.3
+      ]
+    },
+    "ImuProcess": {
+      "AccFilterWeight": [
+        1
+      ],
+      "GyroFilterWeight": [
+        1
+      ],
+      "MagFilterWeight": [
+        1
+      ]
+    },
+    "AsyncLogger": {
+      "LogPath": "./log/extra_data/",
+      "WriteBackFrequency": 100
+    },
+    "NN": {
+      "Inference": {
+        "WarmUpModel": false,
+        "IntraNumberThreads": 1
+      },
+      "Network": {
+        "ModelPath": "C:/Users/ZhouZishun/Documents/Workspace/CtrlZ/example/BitbotSimulation/CheckPoints/policy_1.onnx",
+        //"ModelPath": "/home/owheel/Documents/BITWheelFoot/CheckPoints/policy_1.onnx",
+        "InputNodeNames": [
+          "observation"
+        ],
+        "OutputNodeNames": [
+          "action"
+        ],
+        "Cycle_time": 0.5,
+        "SwitchTime": 1.0
+      },
+      "Preprocess": {
+        "ObservationScales": {
+          "lin_vel": 2.0,
+          "ang_vel": 0.25,
+          "project_gravity": 1,
+          "dof_pos": 1,
+          "dof_vel": 0.05
+        },
+        "ClipObservations": 100
+      },
+      "Postprocess": {
+        "clip_actions": 100,
+        "action_scale": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "joint_clip_upper": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "joint_clip_lower": [
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100,
+          -100
+        ]
+      }
+    }
+  }
+}

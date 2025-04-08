@@ -1,0 +1,48 @@
+<mujoco model="Pendulum">
+  <compiler autolimits="true"/>
+	<option timestep="0.001" integrator="RK4">
+		<flag sensornoise="enable" />
+	</option>
+
+  <visual>
+    <map force="0.1" zfar="30"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global offwidth="2560" offheight="1440" elevation="-20" azimuth="120"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+    <texture name="body" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>
+    <material name="body" texture="body" texuniform="true" rgba="0.8 0.6 .4 1"/>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4"/>
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+  </asset>
+
+	<worldbody>
+    <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+		<geom name="floor" type="plane" size="0 0 0.05" material="grid"/>
+		<body pos="0 0 0.05">
+      <!-- <freejoint name="root"/> -->
+      <geom type="box" size="0.2 0.2 0.05" mass="2" rgba="0.965 0.702 0.4196078 1"/>
+      <body pos="0 0 0.55" euler="0 0 0">
+        <geom type="capsule" size="0.02 0.48" rgba="0.8 0.6 .4 1" mass="1"/>
+        <joint name="joint_x" type="hinge" axis = "1 0 0" pos="0 0 -0.5" range="-90 90"/>
+        <joint name="joint_y" type="hinge" axis = "0 1 0" pos="0 0 -0.5" range="-90 90"/>
+        <site name = "site_imu" pos = "0 0 -0.5"/>
+        <site name = "site_forcesensor" pos = "0 0 -0.5"/>
+      </body>
+		</body>
+	</worldbody>
+	<actuator>
+		<motor name="joint_x" joint="joint_x" gear="1" ctrllimited="true" ctrlrange="-100 100" />
+		<motor name="joint_y" joint="joint_y" gear="1" ctrllimited="true" ctrlrange="-100 100" />
+	</actuator>
+	<sensor>
+		<force name = "forcesensor" site = "site_forcesensor" cutoff = "2000.0"/>
+		<torque name = "torquesensor" site = "site_forcesensor" cutoff = "2000.0"/>
+    <accelerometer name = "imu_acc" site = "site_imu"/>
+    <gyro name = "imu_gyro" site = "site_imu"/>
+    <framepos name='imu_pos' objtype='site' objname='site_imu'/>
+    <framelinvel name='imu_linvel' objtype='site' objname='site_imu'/>
+	</sensor>
+</mujoco>

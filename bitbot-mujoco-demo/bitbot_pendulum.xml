@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bitbot>
+  <logger path="./log"/>
+  
+  <backend port="12888" settings_file="./backend.json"/>
+
+  <mujoco file="./models/pendulum.xml"/>
+  
+  <bus>
+    <device id="1" type="MujocoJoint" name="joint_x"
+            mode="position"
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="2" type="MujocoJoint" name="joint_y"
+            mode="position" initial_pos='30'
+            pos_kp='28000' pos_kd='50' pos_ki='0' vel_kp='10' vel_kd='0'
+    />
+    <device id="3" type="MujocoForceSensor" name="rfoot"
+            force="forcesensor" torque="torquesensor"
+    />
+    <device id="4" type="MujocoImu" name="imu"
+            site="site_imu" acc="imu_acc" gyro="imu_gyro"
+    />
+    <device id="5" type="MujocoFramepos" name="imu_pos" />
+    <device id="6" type="MujocoFramelinvel" name="imu_linvel" />
+  </bus>
+</bitbot>
